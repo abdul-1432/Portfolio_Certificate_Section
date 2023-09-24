@@ -1,0 +1,297 @@
+body {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+  }
+  body a, body a:visited {
+    color: #ccc;
+    text-decoration: none;
+  }
+  body a:hover {
+    color: #aaa;
+  }
+  
+  .container {
+    position: relative;
+    margin: 0 auto;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    -webkit-animation: mainFadeIn 2s ease forwards 1.8s;
+            animation: mainFadeIn 2s ease forwards 1.8s;
+  }
+  
+  .main-slider {
+    position: relative;
+    width: calc(100vw - 26vw);
+    height: 100%;
+    overflow: hidden;
+  }
+  .main-slider .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .main-slider .slide:target {
+    z-index: 3;
+  }
+  .main-slider .slide:target::before {
+    opacity: 1;
+  }
+  .main-slider .slide:target:first-of-type .meta .title span {
+    transform: translateY(100%);
+  }
+  .main-slider .slide:target:first-of-type .meta .desc span {
+    transform: translateY(-100%);
+  }
+  .main-slider .slide:target figure img {
+    -webkit-animation: show 2.2s ease forwards;
+            animation: show 2.2s ease forwards;
+  }
+  .main-slider .slide:target .meta .title span {
+    -webkit-animation: showTitle 1.2s forwards 0.8s;
+            animation: showTitle 1.2s forwards 0.8s;
+  }
+  .main-slider .slide:target .meta .desc span {
+    -webkit-animation: showDesc 1s forwards 1.2s;
+            animation: showDesc 1s forwards 1.2s;
+  }
+  .main-slider .slide:not(:target):not(:first-of-type) {
+    -webkit-animation: zIndex 2.2s ease forwards;
+            animation: zIndex 2.2s ease forwards;
+  }
+  .main-slider .slide:not(:target):not(:first-of-type) figure img {
+    -webkit-animation: hide 2.2s ease forwards;
+            animation: hide 2.2s ease forwards;
+  }
+  .main-slider .slide:not(:target):not(:first-of-type) .meta .title span {
+    -webkit-animation: hideTitle 1s forwards;
+            animation: hideTitle 1s forwards;
+  }
+  .main-slider .slide:not(:target):not(:first-of-type) .meta .desc span {
+    -webkit-animation: hideDesc 1s forwards;
+            animation: hideDesc 1s forwards;
+  }
+  .main-slider .slide:first-of-type {
+    z-index: 2;
+  }
+  .main-slider .slide:first-of-type .meta .title span,
+  .main-slider .slide:first-of-type .meta .desc span {
+    transform: translateY(0);
+  }
+  .main-slider .slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+  }
+  .main-slider .slide .meta {
+    position: absolute;
+    top: calc(50% - 19px);
+    left: 0;
+    margin: 0 40% 0 2.4vw;
+    color: #fff;
+    text-align: left;
+    line-height: 1.26;
+  }
+  .main-slider .slide .meta .title,
+  .main-slider .slide .meta .desc {
+    overflow: hidden;
+  }
+  .main-slider .slide .meta .title span,
+  .main-slider .slide .meta .desc span {
+    display: inline-block;
+  }
+  .main-slider .slide .meta .title {
+    font-size: 38px;
+    font-weight: 800;
+  }
+  .main-slider .slide .meta .title span {
+    transform: translateY(100%);
+  }
+  .main-slider .slide .meta .desc {
+    margin-top: 15px;
+    font-size: 15px;
+  }
+  .main-slider .slide .meta .desc span {
+    transform: translateY(-100%);
+  }
+  
+  .thumbnail-slider {
+    position: relative;
+    width: 26vw;
+    height: 100%;
+    line-height: 0;
+    overflow-y: auto;
+  }
+  .thumbnail-slider::-webkit-scrollbar {
+    width: 5px;
+  }
+  .thumbnail-slider::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.28);
+  }
+  .thumbnail-slider::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.44);
+  }
+  .thumbnail-slider .slide {
+    position: relative;
+    height: 20%;
+    overflow: hidden;
+  }
+  .thumbnail-slider .slide:hover figure img {
+    transform: scale(1.1);
+  }
+  .thumbnail-slider .slide figure img {
+    transition: transform 0.5s;
+  }
+  
+  .slide figure {
+    height: 100%;
+  }
+  .slide figure img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  
+  @-webkit-keyframes mainFadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes mainFadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes show {
+    0% {
+      transform: scale(1.24);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @keyframes show {
+    0% {
+      transform: scale(1.24);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  @-webkit-keyframes hide {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  @keyframes hide {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  @-webkit-keyframes zIndex {
+    0% {
+      z-index: 2;
+    }
+    100% {
+      z-index: 2;
+    }
+  }
+  @keyframes zIndex {
+    0% {
+      z-index: 2;
+    }
+    100% {
+      z-index: 2;
+    }
+  }
+  @-webkit-keyframes showTitle {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes showTitle {
+    0% {
+      transform: translateY(100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes hideTitle {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @keyframes hideTitle {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+  @-webkit-keyframes showDesc {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @keyframes showDesc {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  @-webkit-keyframes hideDesc {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
+  @keyframes hideDesc {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-100%);
+    }
+  }
