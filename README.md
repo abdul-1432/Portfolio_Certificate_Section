@@ -26,7 +26,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Repository Setup
 
-1. **Fork the Repository**: Click the "Fork" button in the upper right corner of this repository to create your own copy of it.
+1. **Fork the Repository**: Click the "Fork" button in the upper right corner of this repository to create your copy of it.
 
 2. **Clone the Repository**: Clone the forked repository to your local machine using Git. Replace `<your-username>` with your GitHub username:
 
@@ -47,7 +47,7 @@ Before you begin, ensure you have met the following requirements:
 
 1. **Upload Certificates**: In the repository, navigate to the `certificates` folder. You can upload your certificates, diplomas, or any relevant credentials in this folder. You can do this directly through the GitHub web interface or by using Git commands.
 
-2. **Edit the Markdown File**: Open the `certificates.md` file located in the root of the repository. This Markdown file will be used to display your certificates on your GitHub page. Edit the file to include details of your certificates, such as the name of the certificate, the issuing institution, the date of issuance, and a brief description.
+2. **Edit the Markdown File**: Open the `certificates. md` file located in the root of the repository. This Markdown file will be used to display your certificates on your GitHub page. Edit the file to include details of your certificates, such as the name of the certificate, the issuing institution, the date of issuance, and a brief description.
 
    ```markdown
    ### Certificate Title
@@ -60,7 +60,7 @@ Before you begin, ensure you have met the following requirements:
 3. **Commit Changes**: After adding your certificates and editing the Markdown file, commit your changes to your branch:
 
    ```bash
-   git add certificates.md
+   git add certificates. md
    git commit -m "Add certificate details"
    git push origin add-certificates
    ```
@@ -69,7 +69,7 @@ Before you begin, ensure you have met the following requirements:
 
 ### Customization
 
-You can customize the appearance of your certificate section by editing the `certificates.md` file or by modifying the CSS styles in the `style.css` file. Feel free to adapt the structure and design to fit your personal preferences.
+You can customize the appearance of your certificate section by editing the `certificates. md` file or by modifying the CSS styles in the `style.css` file. Feel free to adapt the structure and design to fit your personal preferences.
 
 ## Contributing
 
