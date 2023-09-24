@@ -31,7 +31,7 @@ Before you begin, ensure you have met the following requirements:
 2. **Clone the Repository**: Clone the forked repository to your local machine using Git. Replace `<your-username>` with your GitHub username:
 
    ```bash
-   git clone https://github.com/<your-username>/portfolio-certificate-section.git
+   git clone https://github.com/abdul-1432/Portfolio_Certificate_Section
    ```
 
 3. **Create a New Branch**: Move into the repository directory and create a new branch for your changes:
